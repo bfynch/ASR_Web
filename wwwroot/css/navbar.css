@@ -1,0 +1,28 @@
+﻿
+.navbar {
+    background-color: #000053 !important;
+}
+
+.navbar-inverse {
+    background-color: #000053 !important;
+}
+
+.navbar-inverse .navbar-text {
+        color: white !important;
+    }
+
+.navbar-inverse .navbar-link {
+        color: white !important;
+    }
+
+.navbar-inverse .btn-link {
+        color: white !important;
+    }
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: white !important;
+    }
+
+.navbar-inverse .navbar-nav > li > a {
+        color: white !important;
+    }
