@@ -1,12 +1,12 @@
 @model Asr.Models.Slot
 
 @{
-    ViewData["Title"] = "Cancel Booking";
+    ViewData["Title"] = "Booking Confirmation";
 }
 
-<h2>Cancel Booking</h2>
+<h2>Booking Confirmation</h2>
 
-<h3>Are you sure you want to cancel this booking?</h3>
+<h3>Confirm booking details.</h3>
 <div>
     <h4>Slot</h4>
     <hr />
@@ -31,10 +31,12 @@
         </dd>
     </dl>
 
-    <form asp-action="Delete">
+    <form asp-action="BookSlot">
         <input type="hidden" asp-for="RoomID" />
         <input type="hidden" asp-for="StartTime" />
-        <input type="submit" value="Edit" class="btn btn-default" /> |
+        <input type="hidden" asp-for="StudentID" />
+        <input type="hidden" asp-for="StaffID" />
+        <input type="submit" value="Confirm" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

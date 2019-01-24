@@ -23,16 +23,23 @@ namespace Asr.Controllers
         }
 
         // GET: Slot
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
             var staffid = HttpContext.User.Identity.Name.Substring(0, 6);
-            return View(await _context.Slot.Where(x => x.StaffID == staffid).ToListAsync());
+            var slots = from s in _context.Slot
+                        where s.StaffID == staffid
+                        orderby s.StartTime
+                        select s;
+
+            int pageSize = 5;
+            return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
+
         // GET: Slot/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(string roomid, DateTime starttime)
         {
-            if (id == null)
+            if (roomid == null)
             {
                 return NotFound();
             }
@@ -41,7 +48,7 @@ namespace Asr.Controllers
                 .Include(s => s.Room)
                 .Include(s => s.Staff)
                 .Include(s => s.Student)
-                .FirstOrDefaultAsync(m => m.RoomID == id);
+                .FirstOrDefaultAsync(m => m.RoomID == roomid && m.StartTime == starttime);
             if (slot == null)
             {
                 return NotFound();
@@ -172,9 +179,5 @@ namespace Asr.Controllers
             return _context.Slot.Any(e => e.RoomID == id);
         }
 
-        public void LoggedInUser()
-        {
-
-        }
     }
 }

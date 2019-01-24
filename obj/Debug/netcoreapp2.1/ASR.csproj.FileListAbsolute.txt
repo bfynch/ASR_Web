@@ -17,16 +17,13 @@
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/ASR.RazorCoreGenerate.cache
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ViewStart.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
-/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Home/Rooms.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Create.g.cshtml.cs
-/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Delete.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Details.g.cshtml.cs
-/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Edit.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Index.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs
@@ -41,3 +38,7 @@
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StaffDash/Edit.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StaffDash/Index.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StaffDash/Delete.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/BookSlot.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/CancelBooking.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Home/FAQ.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/AllSlots.g.cshtml.cs

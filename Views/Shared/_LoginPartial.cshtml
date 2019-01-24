@@ -8,11 +8,11 @@
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @if (User.Identity.Name.Substring(0, 1) == "e")
+                @if (User.Identity.Name.StartsWith('e'))
                 {
                      <a asp-area="" asp-controller="StaffDash" asp-action="Index">My Dashboard</a>
                 }
-                @if (User.Identity.Name.Substring(0, 1) == "s")
+                @if (User.Identity.Name.StartsWith('s'))
                  {
                     <a asp-area="" asp-controller="StudentDash" asp-action="Index">My Dashboard</a>
                   }

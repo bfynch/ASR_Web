@@ -14,9 +14,9 @@ namespace Asr.Controllers
         public HomeController(AsrContext context) => _context = context;
 
         public async Task<IActionResult> Index() => View();
-            //View(await _context.Slot.Include(s => s.Room).Include(s => s.Staff).Include(s => s.Student).ToListAsync());
-        
-        public async Task<IActionResult> Rooms() => View(await _context.Room.ToListAsync());
+        //View(await _context.Slot.Include(s => s.Room).Include(s => s.Staff).Include(s => s.Student).ToListAsync());
+
+        public async Task<IActionResult> FAQ() => View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() =>

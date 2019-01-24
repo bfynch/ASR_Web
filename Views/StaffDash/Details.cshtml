@@ -7,7 +7,6 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Slot</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,20 +16,38 @@
             @Html.DisplayFor(model => model.Room.RoomID)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Staff)
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff.StaffID)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Staff.StaffID)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Student)
+            @Html.DisplayNameFor(model => model.Staff.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Staff.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.StudentID)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Student.StudentID)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+    </dl>
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
