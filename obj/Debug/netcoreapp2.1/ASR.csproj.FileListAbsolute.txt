@@ -42,3 +42,4 @@
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/CancelBooking.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Home/FAQ.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/AllSlots.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/AllBookings.g.cshtml.cs

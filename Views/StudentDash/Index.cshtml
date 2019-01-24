@@ -40,7 +40,10 @@
         }
     </tbody>
 </table>
-
+@if (Model.Where(x => x.StudentID == UserManager.GetUserName(User).Substring(0, 8)).Count() > 4)
+{
+    <a asp-action="AllBookings"> See all </a>
+}
 <h3>Available Slots</h3>
 <table class="table">
     <thead>
@@ -78,4 +81,7 @@
         }
     </tbody>
 </table>
+@if (Model.Where(x => x.StudentID == null).Count() > 4)
+{
 <a asp-action="AllSlots">See all</a>
+}

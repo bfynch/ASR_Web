@@ -1,26 +1,38 @@
 ﻿<Properties StartupConfiguration="{A438BCCF-F27B-418F-BE8A-BF36EE5460A6}|Default">
   <MonoDevelop.Ide.ItemProperties.ASR PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StudentDash/AllSlots.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/Register.cshtml">
     <Files>
-      <File FileName="Views/StudentDash/Index.cshtml" Line="81" Column="24" />
-      <File FileName="Controllers/StudentDashController.cs" Line="31" Column="9" />
+      <File FileName="Views/StudentDash/Index.cshtml" Line="84" Column="53" />
+      <File FileName="Controllers/StudentDashController.cs" Line="43" Column="25" />
       <File FileName="Views/StudentDash/CancelBooking.cshtml" Line="34" Column="36" />
       <File FileName="Views/StaffDash/Index.cshtml" Line="67" Column="5" />
-      <File FileName="Views/StudentDash/AllSlots.cshtml" Line="67" Column="5" />
+      <File FileName="Views/StudentDash/AllSlots.cshtml" Line="15" Column="22" />
+      <File FileName="Views/StudentDash/AllBookings.cshtml" Line="7" Column="20" />
+      <File FileName="Areas/Identity/Pages/Account/Register.cshtml" Line="18" Column="61" />
+      <File FileName="Models/Slot.cs" Line="22" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ASR" expanded="True">
             <Node name="ASR" expanded="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True">
+                      <Node name="Register.cshtml" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
                 <Node name="StaffDash" expanded="True" />
-                <Node name="StudentDash" expanded="True">
-                  <Node name="AllSlots.cshtml" selected="True" />
-                </Node>
+                <Node name="StudentDash" expanded="True" />
               </Node>
             </Node>
           </Node>

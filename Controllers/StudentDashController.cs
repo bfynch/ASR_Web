@@ -36,6 +36,15 @@ namespace Asr.Controllers
             return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
+        public async Task<IActionResult> AllBookings(int? page)
+        {
+            var slots = from s in _context.Slot 
+                        where s.StudentID == HttpContext.User.Identity.Name.Substring(0,8) 
+                        select s;
+            int pageSize = 5;
+            return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
+        }
+
         // GET: Slot/Details/5
         public async Task<IActionResult> Details(string id)
         {
