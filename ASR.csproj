@@ -22,6 +22,7 @@
     <Content Remove="Areas\Identity\Pages\Account\Register.cshtml" />
     <Content Remove="Areas\Identity\Pages\_ValidationScriptsPartial.cshtml" />
     <Content Remove="Areas\Identity\Pages\_ViewImports.cshtml" />
+    <Content Remove="Views\StudentDash\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Areas\Identity\Pages\Account\_ViewImports.cshtml" />

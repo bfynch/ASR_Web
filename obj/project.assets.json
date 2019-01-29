@@ -4763,6 +4763,7 @@
       "type": "package",
       "path": "jquery/3.3.1",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "Content/Scripts/jquery-3.3.1-vsdoc.js",
         "Content/Scripts/jquery-3.3.1.js",

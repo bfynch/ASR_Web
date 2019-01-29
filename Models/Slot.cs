@@ -1,19 +1,20 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Asr.Data;
 
 namespace Asr.Models
 {
     public class Slot
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SlotID { get; set; }
 
         [Required]
         public string RoomID { get; set; }
         public virtual Room Room { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
         public DateTime StartTime { get; set; }
 
         [Required]

@@ -93,18 +93,12 @@ namespace Asr.Migrations
 
                     b.Property<DateTime>("StartTime");
 
-                    b.Property<int>("SlotID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("StaffID")
                         .IsRequired();
 
                     b.Property<string>("StudentID");
 
                     b.HasKey("RoomID", "StartTime");
-
-                    b.HasAlternateKey("SlotID");
 
                     b.HasIndex("StaffID");
 

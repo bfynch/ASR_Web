@@ -73,15 +73,35 @@ namespace Asr.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("RoomID,StartTime,StaffID,StudentID")] Slot slot)
         {
+            ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID", slot.RoomID);
+            ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID", slot.StaffID);
+            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", slot.StudentID);
+
+            if (_context.Slot.Where(x => x.RoomID == slot.RoomID && x.StartTime.Date == slot.StartTime.Date).Count() == 2)
+            {
+                ViewData["DateMessage"] = new string($"Room {slot.RoomID} has exceeded the max amount of bookings for the selected date.");
+                return View(slot);
+            }
+
+            if(_context.Slot.Where(x => x.StartTime.Date == slot.StartTime.Date && x.StaffID == slot.StaffID).Count() == 4)
+            {
+                ViewData["StaffMessage"] = new string($"You have exceeded the max amount of bookings for the selected date.");
+                return View(slot);
+            }
+
+            if (!ValidTime(slot.StartTime))
+            {
+                ViewData["DateMessage"] = new string($"Invalid time selected.");
+                return View(slot);
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(slot);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID", slot.RoomID);
-            ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID", slot.StaffID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", slot.StudentID);
+
             return View(slot);
         }
 
@@ -177,6 +197,11 @@ namespace Asr.Controllers
         private bool SlotExists(string id)
         {
             return _context.Slot.Any(e => e.RoomID == id);
+        }
+
+        public bool ValidTime(DateTime time)
+        {
+            return (time.Minute == 0 && time.Hour <= 14 && time.Hour >= 9 && time > DateTime.Now);
         }
 
     }

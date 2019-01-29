@@ -1,4 +1,6 @@
 ﻿@model PaginatedList<Asr.Models.Slot>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 
 @{
     ViewData["Title"] = "All Slots";
@@ -21,24 +23,27 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Where(x => x.StudentID == null).OrderBy(y => y.StartTime))
+        @foreach (var item in Model.OrderBy(y => y.StartTime))
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Room.RoomID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Staff.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
-            </td>
-            <td>
-                <a asp-action="BookSlot" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">Book Slot</a> |
-                <a asp-action="Details" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">Details</a>
-            </td>
-        </tr>
-}
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room.RoomID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staff.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">Details</a>
+                    @if (Model.Where(x => x.StudentID == UserManager.GetUserName(User).Substring(0, 8) && x.StartTime.Date == item.StartTime.Date).Count() == 0)
+                    {
+                        <a asp-action="BookSlot" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">| Book Slot</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

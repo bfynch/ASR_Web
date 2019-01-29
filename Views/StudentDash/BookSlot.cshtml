@@ -18,19 +18,25 @@
             @Html.DisplayFor(model => model.Room.RoomID)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Staff)
+            Start Time
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt>
+            Staff ID
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Staff.StaffID)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Student)
+            Staff Name
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Student.StudentID)
+            @Html.DisplayFor(model => model.Staff.Name)
         </dd>
     </dl>
-
+    <a class="text-danger">@ViewBag.ErrorMessage</a>
     <form asp-action="BookSlot">
         <input type="hidden" asp-for="RoomID" />
         <input type="hidden" asp-for="StartTime" />

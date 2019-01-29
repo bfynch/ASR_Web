@@ -31,66 +31,34 @@ namespace Asr.Controllers
 
         public async Task<IActionResult> AllSlots(int? page)
         {
-            var slots = from s in _context.Slot select s;
+            var slots = from s in _context.Slot where s.StudentID == null select s;
             int pageSize = 5;
             return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
         public async Task<IActionResult> AllBookings(int? page)
         {
-            var slots = from s in _context.Slot 
-                        where s.StudentID == HttpContext.User.Identity.Name.Substring(0,8) 
+            var slots = from s in _context.Slot
+                        where s.StudentID == HttpContext.User.Identity.Name.Substring(0, 8)
                         select s;
             int pageSize = 5;
             return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
         // GET: Slot/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(string roomid, DateTime starttime)
         {
-            if (id == null)
+            if (roomid == null)
             {
                 return NotFound();
             }
 
-            var slot = await _context.Slot
-                .Include(s => s.Room)
-                .Include(s => s.Staff)
-                .Include(s => s.Student)
-                .FirstOrDefaultAsync(m => m.RoomID == id);
+            Slot slot = _context.Slot.Where(x => x.RoomID == roomid && x.StartTime == starttime).FirstOrDefault();
             if (slot == null)
             {
                 return NotFound();
             }
 
-            return View(slot);
-        }
-
-        // GET: Slot/Create
-        public IActionResult Create()
-        {
-            ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID");
-            ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID");
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
-            return View();
-        }
-
-        // POST: Slot/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoomID,StartTime,StaffID,StudentID")] Slot slot)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(slot);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID", slot.RoomID);
-            ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID", slot.StaffID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", slot.StudentID);
             return View(slot);
         }
 
@@ -116,11 +84,23 @@ namespace Asr.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> BookSlot(string roomid, DateTime starttime, [Bind("RoomID,StartTime,StaffID,StudentID")] Slot slot)
         {
+            //ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID", slot.RoomID);
+            //ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID", slot.StaffID);
+            //ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", slot.StudentID);
+            var studentid = HttpContext.User.Identity.Name.Substring(0, 8);
+
             if (roomid != slot.RoomID)
             {
                 return NotFound();
             }
-            slot.StudentID = HttpContext.User.Identity.Name.Substring(0, 8);
+
+            if (_context.Slot.Where(x => x.StartTime.Date == starttime.Date && x.StudentID == studentid).Count() == 1)
+            {
+                ViewData["ErrorMessage"] = new string ("Failed to book slot. You already have a slot booked for this date.");
+                return View(slot);
+            }
+
+            slot.StudentID = studentid;
             if (ModelState.IsValid)
             {
                 try
@@ -141,11 +121,8 @@ namespace Asr.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            _context.Update(slot);
+            //_context.Update(slot);
             await _context.SaveChangesAsync();
-            ViewData["RoomID"] = new SelectList(_context.Room, "RoomID", "RoomID", slot.RoomID);
-            ViewData["StaffID"] = new SelectList(_context.Staff, "StaffID", "StaffID", slot.StaffID);
-            ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID", slot.StudentID);
             return View(slot);
         }
 

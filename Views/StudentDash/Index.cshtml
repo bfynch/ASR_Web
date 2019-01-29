@@ -2,6 +2,10 @@
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<ApplicationUser> UserManager
 
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
 <h2>Student Dashboard</h2>
 <h3>My Bookings</h3>
 <table class="table">
@@ -14,7 +18,7 @@
                 @Html.DisplayNameFor(x => x.Staff)
             </th>
             <th>
-                @Html.DisplayNameFor(x => x.StartTime)
+                Start Time
             </th>
             <th></th>
         </tr>
@@ -55,7 +59,7 @@
                 @Html.DisplayNameFor(model => model.Staff)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartTime)
+                Start Time
             </th>
             <th></th>
         </tr>
@@ -74,8 +78,11 @@
                     @Html.DisplayFor(modelItem => item.StartTime)
                 </td>
                 <td>
-                    <a asp-action="BookSlot" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">Book Slot</a> |
                     <a asp-action="Details" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">Details</a>
+                    @if (Model.Where(x => x.StudentID == UserManager.GetUserName(User).Substring(0, 8) && x.StartTime.Date == item.StartTime.Date).Count() == 0)
+                    {
+                        <a asp-action="BookSlot" asp-route-roomid="@item.RoomID" asp-route-starttime="@item.StartTime">| Book Slot</a>
+                    }
                 </td>
             </tr>
         }
@@ -83,5 +90,5 @@
 </table>
 @if (Model.Where(x => x.StudentID == null).Count() > 4)
 {
-<a asp-action="AllSlots">See all</a>
+    <a asp-action="AllSlots">See all</a>
 }
