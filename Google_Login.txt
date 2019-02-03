@@ -1,0 +1,5 @@
+I have used the Google API to allow users to register and login with their Gmail account.
+
+This is beneficial for both the user and the service provider. By allowing users to sign in with their Google account, they can register with just the click of a button and don't need to enter any of their details. This also allows the service to access the user's contacts, calendar, drive, and other google features. This is convenient for the user as they don't need to enter all of these details into a third party site. 
+
+This is also good for the service provider. With the Google API, you don't need to worry about user data being compromised by security threats. If your site is attacked, you won't have any user data (including passwords, email address, etc) lost or stolen, as they're all stored by Google. You can rely on Google's world class security infrastructure to safely store all of the user's information.

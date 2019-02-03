@@ -67,7 +67,7 @@ using Asr.Models;
             WriteLiteral("\r\n<div class=\"main\">\r\n    <h2>Room Availability</h2>\r\n    ");
             EndContext();
             BeginContext(150, 420, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "844ca817b3fa4001a2af2fe5536e4d3f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1b845fc16544b859a06d3e065a0ff1a", async() => {
                 BeginContext(199, 143, true);
                 WriteLiteral("\r\n        <div class=\"form-actions no-color\">\r\n            <p>\r\n                Enter date (yyyy-mm-dd): <input type=\"text\" name=\"SearchString\"");
                 EndContext();
@@ -82,7 +82,7 @@ WriteAttributeValue("", 350, ViewData["currentFilter"], 350, 26, false);
                 WriteLiteral(" />\r\n                <input type=\"submit\" value=\"Search\" class=\"btn btn-default\" /> |\r\n                ");
                 EndContext();
                 BeginContext(480, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fc9f7265fcc4831b33eec587c1bb91b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fc986ed61e24ab09b8b57df7754792b", async() => {
                     BeginContext(502, 17, true);
                     WriteLiteral("Back to Full List");
                     EndContext();

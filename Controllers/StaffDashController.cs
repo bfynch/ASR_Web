@@ -22,7 +22,7 @@ namespace Asr.Controllers
             _context = context;
         }
 
-        // GET: Slot
+        // GET all slots for the signed in staff member
         public async Task<IActionResult> Index(int? page)
         {
             var staffid = HttpContext.User.Identity.Name.Substring(0, 6);
@@ -35,6 +35,7 @@ namespace Asr.Controllers
             return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
+        //Get availability for a slot on a certain day
         public async Task<IActionResult> RoomAvailability(string searchString, string roomid)
         {
             ViewData["CurrentFilter"] = searchString;
@@ -52,7 +53,7 @@ namespace Asr.Controllers
         }
 
 
-        // GET: Slot/Details/5
+        // GET details for a specific slot
         public async Task<IActionResult> Details(string roomid, DateTime starttime)
         {
             if (roomid == null)
@@ -82,9 +83,7 @@ namespace Asr.Controllers
             return View();
         }
 
-        // POST: Slot/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Creates a slot with the user input data or returns an error message if the data is invalid
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("RoomID,StartTime,StaffID,StudentID")] Slot slot)
@@ -121,7 +120,7 @@ namespace Asr.Controllers
             return View(slot);
         }
 
-        // GET: Slot/Edit/5
+        // GET the details for a slot to be edited
         public async Task<IActionResult> Edit(string roomid, DateTime starttime)
         {
             if (roomid== null)
@@ -140,9 +139,7 @@ namespace Asr.Controllers
             return View(slot);
         }
 
-        // POST: Slot/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Edit the details for a specific slot.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string roomid, DateTime starttime, [Bind("RoomID,StartTime,StaffID,StudentID")] Slot slot)
@@ -178,7 +175,7 @@ namespace Asr.Controllers
             return View(slot);
         }
 
-        // GET: Slot/Delete/5
+        // GET the details for a slot to be deleted
         public async Task<IActionResult> Delete(string roomid, DateTime starttime)
         {
             if (roomid == null)
@@ -199,7 +196,7 @@ namespace Asr.Controllers
             return View(slot);
         }
 
-        // POST: Slot/Delete/5
+        // Delete a specific slot
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string roomid, DateTime starttime)
