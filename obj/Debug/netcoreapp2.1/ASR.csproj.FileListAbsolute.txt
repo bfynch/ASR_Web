@@ -22,7 +22,6 @@
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs
-/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Create.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Details.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/Index.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
@@ -43,3 +42,4 @@
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/Home/FAQ.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/AllSlots.g.cshtml.cs
 /Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StudentDash/AllBookings.g.cshtml.cs
+/Users/benjaminfynch/Desktop/Ass2/ASR/obj/Debug/netcoreapp2.1/Razor/Views/StaffDash/RoomAvailability.g.cshtml.cs

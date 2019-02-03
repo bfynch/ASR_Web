@@ -35,6 +35,22 @@ namespace Asr.Controllers
             return View(await PaginatedList<Slot>.CreateAsync(slots, page ?? 1, pageSize));
         }
 
+        public async Task<IActionResult> RoomAvailability(string searchString, string roomid)
+        {
+            ViewData["CurrentFilter"] = searchString;
+
+            var slots = from s in _context.Slot
+                         select s;
+            if (searchString != null)
+            {
+                slots = from s in _context.Slot
+                        where s.StartTime.Date.ToString().Contains(searchString)
+                        select s;
+                                       
+            }
+            return View(slots);
+        }
+
 
         // GET: Slot/Details/5
         public async Task<IActionResult> Details(string roomid, DateTime starttime)

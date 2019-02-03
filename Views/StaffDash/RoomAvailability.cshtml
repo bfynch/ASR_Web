@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Asr.Models.Slot>
+
+@{
+    ViewData["Title"] = "Room Availability";
+}
+
+<div class="main">
+    <h2>Room Availability</h2>
+    <form asp-action="RoomAvailability" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Enter date (yyyy-mm-dd): <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            </p>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Room ID
+                </th>
+                <th>
+                    Free Slots
+                </th>
+                <th>
+                    Slot Booked
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Where(x => x.RoomID == "A").Count() < 2)
+    {
+        <tr>
+            <td>
+                A is available.
+            </td>
+            <td>
+                @{int s = 2 - Model.Where(x => x.RoomID == "A").Count();}
+                @s
+            </td>
+            <td>
+                @if (Model.Where(x => x.RoomID == "A").FirstOrDefault() != null)
+                {
+                    @Model.Where(x => x.RoomID == "A").FirstOrDefault().StartTime
+                }
+            </td>
+        </tr>
+}
+            @if (Model.Where(x => x.RoomID == "B").Count() < 2)
+    {
+        <tr>
+            <td>
+                B is available.
+            </td>
+            <td>
+                @{int s = 2 - Model.Where(x => x.RoomID == "B").Count();}
+                @s
+            </td>
+            <td>
+                @if (Model.Where(x => x.RoomID == "B").FirstOrDefault() != null)
+                { @Model.Where(x => x.RoomID == "B").FirstOrDefault().StartTime }
+            </td>
+        </tr>
+}
+            @if (Model.Where(x => x.RoomID == "C").Count() < 2)
+            {
+        <tr>
+            <td>
+                C is available.
+            </td>
+            <td>
+                @{int s = 2 - Model.Where(x => x.RoomID == "C").Count();}
+                @s
+            </td>
+            <td>
+                @if (Model.Where(x => x.RoomID == "C").FirstOrDefault() != null)
+                { @Model.Where(x => x.RoomID == "C").FirstOrDefault().StartTime }
+            </td>
+        </tr>
+}
+            @if (Model.Where(x => x.RoomID == "D").Count() < 2)
+    {
+        <tr>
+            <td>
+                D is available.
+            </td>
+            <td>
+                @{int s = 2 - Model.Where(x => x.RoomID == "D").Count();}
+                @s
+            </td>
+            <td>
+                @if (Model.Where(x => x.RoomID == "D").FirstOrDefault() != null )
+                { @Model.Where(x => x.RoomID == "D").FirstOrDefault().StartTime }
+            </td>
+        </tr>
+}
+
+
+        </tbody>
+    </table>
+</div>

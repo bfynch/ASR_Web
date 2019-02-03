@@ -122,7 +122,7 @@ using Asr.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(853, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7503013cf0894bbca905a52da424c67b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f877cb3c4dde4b0dbb5b184587b30d9c", async() => {
                 BeginContext(953, 14, true);
                 WriteLiteral("Cancel Booking");
                 EndContext();
@@ -166,7 +166,7 @@ using Asr.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(991, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eaac5e00d20e4612aa777e9a6ac0b7c7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a57c6ce779a84435b87ea09ddcb9f6ee", async() => {
                 BeginContext(1085, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -228,7 +228,7 @@ using Asr.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1298, 188, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3f55efb0c2d4115b39ca1240a717eda", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f239cb8c82704de08f5bf9c0588ded78", async() => {
                 BeginContext(1466, 16, true);
                 WriteLiteral("\r\n    Previous\r\n");
                 EndContext();
@@ -281,7 +281,7 @@ AddHtmlAttributeValue(" ", 1450, prevDisabled, 1451, 13, false);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1488, 184, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e144edbb587446e1b771178e18fdaa25", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26850b405e9745da905faf42b1d62a0e", async() => {
                 BeginContext(1656, 12, true);
                 WriteLiteral("\r\n    Next\r\n");
                 EndContext();

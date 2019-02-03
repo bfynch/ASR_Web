@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -29,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/logo.png"/></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/logo.png" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -46,8 +51,36 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+
+        <div id="sitemap">
+            <ul>
+                <li><a href="Home/FAQ">FAQ</a></li>
+                <li><a href="Identity/Account/Login">Login</a></li>
+                <li><a href="Identity/Account/Register">Register</a></li>
+            </ul>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                @if (User.Identity.Name.StartsWith('e'))
+                {
+                <ul>
+                    <li><a asp-area="" asp-controller="StaffDash" asp-action="Index">Dashboard</a></li>
+                    <li><a asp-area="" asp-controller="StaffDash" asp-action="Create">Create a slot</a></li>
+                    <li><a asp-area="" asp-controller="StaffDash" asp-action="RoomAvailability">Room Availability</a></li>
+                </ul>
+                }
+                @if (User.Identity.Name.StartsWith('s'))
+                {
+                <ul>
+                    <li><a asp-area="" asp-controller="StudentDash" asp-action="Index">Dashboard</a></li>
+                    <li><a asp-area="" asp-controller="StudentDash" asp-action="AllSlots">Available Slots</a></li>
+                    <li><a asp-area="" asp-controller="StudentDash" asp-action="AllBookings">My Bookings</a></li>
+                </ul>
+            }
+        }
+        </div>
+        <hr />
         <footer>
-            <p>&copy; 2019 - ASR</p>
+            s3589828 2019
         </footer>
     </div>
 

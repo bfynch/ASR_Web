@@ -127,7 +127,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(982, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a3cf858feba40bd8e419208c2ef5c45", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b579da7e31a49e1b1558d9868a19e89", async() => {
                 BeginContext(1076, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -180,7 +180,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1298, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3bb84c43b0c94523822f2c6c911a5fb8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1671c5cca7842b18a2742f296c82f6d", async() => {
                 BeginContext(1393, 11, true);
                 WriteLiteral("| Book Slot");
                 EndContext();
@@ -250,7 +250,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1649, 188, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92f62a1282fb4d0a84842576b4365604", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "467b4749ecc64fd88c075054f088ff8e", async() => {
                 BeginContext(1817, 16, true);
                 WriteLiteral("\r\n    Previous\r\n");
                 EndContext();
@@ -303,7 +303,7 @@ AddHtmlAttributeValue(" ", 1801, prevDisabled, 1802, 13, false);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1839, 184, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "305580c271964e81bb233cef23adbaf5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc724bca6ac94c17bf753862dc03abf5", async() => {
                 BeginContext(2007, 12, true);
                 WriteLiteral("\r\n    Next\r\n");
                 EndContext();

@@ -14,7 +14,6 @@ namespace Asr.Controllers
         public HomeController(AsrContext context) => _context = context;
 
         public async Task<IActionResult> Index() => View();
-        //View(await _context.Slot.Include(s => s.Room).Include(s => s.Staff).Include(s => s.Student).ToListAsync());
 
         public async Task<IActionResult> FAQ() => View();
 

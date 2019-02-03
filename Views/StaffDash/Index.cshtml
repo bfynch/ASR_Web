@@ -3,18 +3,15 @@
 <link rel="stylesheet" href="~/css/sidebar.css" />
 
 @{
-    ViewData["Title"] = "Teacher Dashboard";
+    ViewData["Title"] = "Staff Dashboard";
 }
 <div class="sidenav">
     <a asp-action="Create">Create a new slot</a>
-    <a href="#">Room Availability</a>
+    <a asp-action="RoomAvailability">Room Availability</a>
 </div>
 
 <div class="main">
     <h2>My Slots</h2>
-    <p>
-        <a asp-action="Create">Create a new slot</a>
-    </p>
     <table class="table">
         <thead>
             <tr>

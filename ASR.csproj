@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Pages\Account\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Areas\Identity\Pages\Account\_ViewImports.cshtml" />

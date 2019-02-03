@@ -1,14 +1,6 @@
 ﻿<Properties StartupConfiguration="{A438BCCF-F27B-418F-BE8A-BF36EE5460A6}|Default">
   <MonoDevelop.Ide.ItemProperties.ASR PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/StudentDash/CancelBooking.cshtml">
-    <Files>
-      <File FileName="Views/StudentDash/Details.cshtml" Line="12" Column="1" />
-      <File FileName="Views/StudentDash/Index.cshtml" Line="78" Column="93" />
-      <File FileName="Controllers/StudentDashController.cs" Line="56" Column="115" />
-      <File FileName="Views/StudentDash/BookSlot.cshtml" Line="43" Column="52" />
-      <File FileName="Views/StudentDash/CancelBooking.cshtml" Line="37" Column="14" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

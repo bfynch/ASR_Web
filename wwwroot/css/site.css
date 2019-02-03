@@ -35,3 +35,9 @@ body {
         display: none;
     }
 }
+
+ul {
+    display: inline-block;
+    *display: inline;
+    zoom: 1
+}
